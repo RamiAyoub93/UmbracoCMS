@@ -1,0 +1,127 @@
+﻿@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.HomePage>
+@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@using Umbraco.Forms.Web.Models
+
+@{
+    Layout = "MainLayout.cshtml";
+
+    var heroTitle = Model.Value<string>("heroTitle");
+    var heroText = Model.Value<string>("heroText");
+    var heroLink = Model.Value<Umbraco.Cms.Core.Models.Link>("heroLink");
+    var heroBg = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("BackgroundImage");
+    var titleOne = Model.Value<string>("titleOne");
+    var titleTwo = Model.Value<string>("titleTwo");
+    var quote = Model.Value<string>("quote");
+    var text = Model.Value<string>("text");
+    var signatureImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("signatureImage");
+    var signatureText = Model.Value<string>("signatureText");
+    var serviceTitle = Model.Value<string>("serviceTitle");
+    var serviceTitleTwo = Model.Value<string>("serviceTitleTwo");
+    var trustTitleOne = Model.Value<string>("trustTitleOne");
+    var trustTitleTwo = Model.Value<string>("trustTitleTwo");
+    var trustText = Model.Value<string>("trustText");
+    var trustButton = Model.Value<string>("trustButton");
+    var trustImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("trustImage");
+    var successTitleOne = Model.Value<string>("successTitleOne");
+    var successTitleTwo = Model.Value<string>("successTitleTwo");
+    var numberTitleOne = Model.Value<string>("numberTitleOne");
+    var numberText = Model.Value<string>("numberText");
+    var projectTitle = Model.Value<string>("projectTitle");
+    var projectText = Model.Value<string>("projectText");
+    var branchTitle = Model.Value<string>("branchTitle");
+    var branchText = Model.Value<string>("branchText");
+    var groupImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("groupImage");
+    var worldMap = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("worldMap");
+
+    
+}
+
+<section class="hero" style="background-image: url('@heroBg?.Url()');">
+    <div class="hero-overlay">
+        <div class="hero-text">
+            <h1>@Html.Raw(heroTitle)</h1>
+            <p>@Html.Raw(heroText)</p>
+
+            <button class="btn">@heroLink Contact us</button>
+           
+        </div>
+    </div>
+</section>
+
+@Html.GetBlockListHtml(Model.AboutCallbackSection)
+
+@Html.GetBlockListHtml(Model.ServiceSection)
+
+<section class="trust-section">
+    <div class="trust-container">
+        <div class="trust-content">
+            <h3 class="trust-title-one">@Model.TrustTitleOne</h3>
+            <h2 class="trust-title-two">@Model.TrustTitleTwo</h2>
+            <p class="trust-text">@Model.TrustText</p>
+            <button class="trust-button">Read Our Story</button>
+            
+        </div>
+
+        <div class="trust-image">
+            <img src="@Model.TrustImage.Url()" alt="Trusted Clients" />
+        </div>
+    </div>
+</section>
+<section class="success-section">
+    <div class="container">
+        <div class="success-header">
+            <h3 class="success-title-one">@Model.SuccessTitleOne</h3>
+            <h2 class="success-title-two">@Model.SuccessTitleTwo</h2>
+        </div>
+
+        <div class="success-bg">
+            @if (Model.WorldMap != null)
+            {
+                <div class="world-map" style="background-image:url('@Model.WorldMap.Url()');"></div>
+            }
+
+            <div class="success-overlay-content">
+                <div class="success-stats">
+                    <div class="success-item">
+                        <h3 class="success-number">@Model.NumberTitleOne</h3>
+                        <p class="success-sub">@Model.NumberText</p>
+                    </div>
+                    <div class="success-item">
+                        <h3 class="success-number">@Model.ProjectTitle</h3>
+                        <p class="success-sub">@Model.ProjectText</p>
+                    </div>
+                    <div class="success-item">
+                        <h3 class="success-number">@Model.BranchTitle</h3>
+                        <p class="success-sub">@Model.BranchText</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bild under bakgrunden -->
+        @if (Model.GroupImage != null)
+        {
+            <div class="success-group">
+                <img src="@Model.GroupImage.Url()" alt="Our Team" class="group-image" />
+            </div>
+        }
+    </div>
+</section>
+
+<section class="project-section">
+    <div class="project-header">
+      
+            <h3 class="success-title-one">@Model.ProjectTitleOne</h3>
+            <h2 class="success-title-two">@Model.ProjectTitleTwo</h2>
+        
+    </div>
+    <div class="project-images">
+        <img src="/images/imageone.png" alt="Service" />
+        <img src="/images/imagetwo.png" alt="Service" />
+        <img src="/images/imagethree.png" alt="Service" />
+        <img src="/images/imagefour.png" alt="Service" />
+
+    </div>
+</section>
+
+   

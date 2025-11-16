@@ -1,0 +1,72 @@
+﻿ @using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+    var content = Model.Content;
+    var title = content.Value<string>("contactInfoTitle");
+    var officeIcon = content.Value<IPublishedContent>("officeIcon");
+    var officeLocation = content.Value<string>("officeLocation");
+    var officeAddress = content.Value<string>("officeAdress");
+    var phoneIcon = content.Value<IPublishedContent>("phoneIcon");
+    var phoneNumber = content.Value<string>("phoneNumber");
+    var contactNumber = content.Value<string>("contactNumber");
+    var emailIcon = content.Value<IPublishedContent>("emailIcon");
+    var emailText = content.Value<string>("emailText");
+    var emailAddress = content.Value<string>("emailAdress");
+    var infoManBg = content.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("infoManBg");
+    var infoMan = content.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("infoMan");
+}
+
+<section class="contact-block">
+    <div class="contact-container">
+        <!-- LEFT: IMAGE SECTION -->
+        <div class="contact-image">
+            @if (infoManBg != null)
+            {
+                <img src="@infoManBg.Url()" alt="Background Shape" class="contact-bg" />
+            }
+            @if (infoMan != null)
+            {
+                <img src="@infoMan.Url()" alt="Person" class="contact-person" />
+            }
+        </div>
+
+        <!-- RIGHT: TEXT INFO SECTION -->
+        <div class="contact-details">
+            <h2 class="contact-title">@Html.Raw(title)</h2>
+
+            <div class="contact-item">
+                @if (officeIcon != null)
+                {
+                    <img src="@officeIcon.Url()" alt="Office Icon" class="contact-icon" />
+                }
+                <div class="contact-text">
+                    <strong>Office location</strong>
+                    @Html.Raw(officeAddress)</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                @if (phoneIcon != null)
+                {
+                    <img src="@phoneIcon.Url()" alt="Phone Icon" class="contact-icon" />
+                }
+                <div class="contact-text">
+                    <strong>Phone number</strong>
+                    <p>@Html.Raw(contactNumber)</p>
+                </div>
+            </div>
+
+            <div class="contact-item">
+                @if (emailIcon != null)
+                {
+                    <img src="@emailIcon.Url()" alt="Email Icon" class="contact-icon" />
+                }
+                <div class="contact-text">
+                    <strong>E-mail address</strong>
+                    <p>@Html.Raw(emailAddress)</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

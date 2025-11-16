@@ -1,0 +1,117 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+    var content = (ContentModels.ProjectSection)Model.Content;
+
+    var current = Umbraco.AssignedContentItem;
+    var siteRoot = current?.Root();
+    var projectPage = siteRoot?.Children<ProjectPage>()?.FirstOrDefault();
+    var items = projectPage?.Children<ProjectDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+
+
+}
+
+<section class="projects-section">
+    <div class="projects-container">
+        <!-- LISTA MED PROJEKT -->
+        <div class="projects-list">
+            @if (items.Any())
+            {
+                foreach (var project in items)
+                {
+                    <article class="project-item">
+                            <div class="project-image">
+                            <img src="@project.ProjectDetailThumbnail?.Url()" />
+                            </div>
+                            <div class="project-content">
+                                <h3>@project.ProjectDetailTitle</h3>
+                                <p class="project-date">
+                                    <i class="fa-regular fa-calendar"></i>
+                                    @project.CreateDate.ToString("MMMM d, yyyy")
+                                </p>
+                                <p class="project-excerpt">@project.ProjectDetailExcerpt</p>
+                        <a href="@project.Url()">
+                                <span class="read-more">Read more →</span>
+                        </a>
+                            </div>
+                    </article>
+                }
+            }
+            else
+            {
+                <p>No projects available.</p>
+            }
+        </div>
+
+        <!-- SIDEBAR -->
+
+        <aside class="sidebar">
+
+                <div class="projects-container-side">
+                <h4>Recent Projects</h4>
+
+                    <div class="projects-list-side">
+                        @if (items.Any())
+                        {
+                            foreach (var project in items)
+                            {
+                                <article class="project-item-side">
+                                    <div class="project-image-side">
+                                        <img src="@project.ProjectDetailThumbnail?.Url()" />
+                                    </div>
+                                    <div class="project-content-side">
+                                        <h3>@project.ProjectDetailTitle</h3>
+                                        <p class="project-date-side">
+                                            <i class="fa-regular fa-calendar"></i>
+                                            @project.CreateDate.ToString("MMMM d, yyyy")
+                                        </p>
+                                       
+                                    </div>
+                                </article>
+                            }
+                        }
+                        else
+                        {
+                            <p>No projects available.</p>
+                        }
+                    </div>
+            </div>
+            <div class="tags-section">
+                <h4>Recent Tags</h4>
+
+                <div class="tags-list">
+                    <p>
+                        Report
+
+                        Busines plans
+
+                        Insights
+
+                        Business
+
+                        App
+
+                        Project
+
+                        Finance
+
+                        Pricing
+                    </p>
+                </div>
+            </div>
+
+            <!-- DIN HELP-RUTA -->
+            <div class="help-container">
+                <h3>How can we help you?</h3>
+                <p>online support 24/7, we are here to help you</p>
+                <form class="input-wrapper">
+                    <input type="email" class="input-field" placeholder="Email address" required />
+                    <button type="submit" class="mail-btn">
+                        <i class="fa-regular fa-envelope"></i>
+                    </button>
+                </form>
+            </div>
+        </aside>
+    </div>
+</section>

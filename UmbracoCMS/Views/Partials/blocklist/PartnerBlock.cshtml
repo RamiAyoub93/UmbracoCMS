@@ -1,0 +1,60 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+    var content = Model.Content;
+
+    // Använd content på blocket, inte Model
+    var partnerOne = content.Value<IPublishedContent>("PartnerOne");
+    var partnerTwo = content.Value<IPublishedContent>("PartnerTwo");
+    var partnerThree = content.Value<IPublishedContent>("PartnerThree");
+    var partnerFour = content.Value<IPublishedContent>("PartnerFour");
+    var partnerFive = content.Value<IPublishedContent>("PartnerFive");
+    var partnerSix = content.Value<IPublishedContent>("PartnerSix");
+}
+
+<section class="partner-section">
+    <div>
+        @if (partnerOne != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerOne.Url()" alt="Partners" class="partners" />
+            </div>
+        }
+
+        @if (partnerTwo != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerTwo.Url()" alt="Partners" class="partners" />
+            </div>
+        }
+
+        @if (partnerThree != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerThree.Url()" alt="Partners" class="partners" />
+            </div>
+        }
+
+        @if (partnerFour != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerFour.Url()" alt="Partners" class="partners" />
+            </div>
+        }
+
+        @if (partnerFive != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerFive.Url()" alt="Partners" class="partners" />
+            </div>
+        }
+
+        @if (partnerSix != null)
+        {
+            <div class="partner-image">
+                <img src="@partnerSix.Url()" alt="Our Partners" class="partners" />
+            </div>
+        }
+    </div>
+</section>

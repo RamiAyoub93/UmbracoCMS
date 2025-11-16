@@ -1,0 +1,16 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+    var content = (ContentModels.SideBarInfo)Model.Content;
+}
+
+<aside class="sidebar">
+    <div class="tags-section">
+        <h4>@content.ProjectTagTitle</h4>
+
+        <div class="tags-list">
+            @Html.Raw(content.ProjectTags)
+        </div>
+    </div>
+</aside>

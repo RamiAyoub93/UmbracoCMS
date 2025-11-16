@@ -1,0 +1,46 @@
+﻿
+@model UmbracoCms.ViewModels.CallBackFormViewModel
+
+@using (Html.BeginUmbracoForm("HandleCallBackForm", "Form", FormMethod.Post, new { novalidate = "novalidate", id = "callBackForm" }))
+{
+	<div class="form-group-contact two-column">
+
+		<div>
+			<input asp-for="Name" type="text" placeholder="@Html.DisplayNameFor(x => x.Name)" class="form-input" />
+			<span asp-validation-for="Name"></span>
+		</div>
+
+		<div>
+			<input asp-for="Email" type="text" placeholder="@Html.DisplayNameFor(x => x.Email)" class="form-input" />
+			<span asp-validation-for="Email"></span>
+		</div>
+
+		<div>
+			
+			<input asp-for="Phone" type="text" placeholder="@Html.DisplayNameFor(x => x.Phone)" class="form-input" />
+			<span asp-validation-for="Phone"></span>
+		</div>
+
+
+		<div>
+
+			<div>
+				<select asp-for="SelectedOption" class="form-option-drop">
+
+					<option value="" disabled hidden selected>Please select an option</option>
+					<option value="Financial consulting">Financial Consulting</option>
+					<option value="Business">Business</option>
+					<option value="Tax planning">Tax Planning</option>
+
+				</select>
+
+
+			</div>
+		</div>
+
+		<div class="form-button">
+			<button type="submit">Submit</button>
+		</div>
+	</div>
+}
+

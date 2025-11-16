@@ -1,0 +1,14 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ProjectPage>
+@{
+    Layout = "MainLayout.cshtml";
+
+}
+<partial name="Partials/_PageHeader" model="(IPageHeader)Model" />
+
+
+
+
+@Html.GetBlockListHtml(Model.ProjectSection)
+
+@Html.GetBlockListHtml(Model.ContactSection)

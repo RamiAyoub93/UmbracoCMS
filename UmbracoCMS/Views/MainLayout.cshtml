@@ -1,0 +1,140 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage
+
+@{
+    Layout = null;
+
+    var home = Umbraco.ContentAtRoot().FirstOrDefault(x => x.ContentType.Alias == "homePage");
+
+    // 🧭 Dynamisk navigering
+    var root = Umbraco.ContentAtRoot().FirstOrDefault();
+    var menuItems = root?.Children()?.Where(x => x.IsPublished()).ToList();
+    var searchIcon = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("searchIcon");
+
+
+    // 📍 Topbar-data från Home Page
+    var adressText = home?.Value<string>("adressText");
+    var facebookUrl = home?.Value<string>("facebookUrl");
+    var twitterUrl = home?.Value<string>("twitterUrl");
+    var linkedinUrl = home?.Value<string>("linkedinUrl");
+
+    // 🦶 Footer-blocks
+    var footerBlocks = home?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("footer");
+
+    // 🧱 Partner & Contact Blocks
+    var partnerBlocks = Model?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("partnerBlock");
+    var contactBlocks = Model?.Value<IEnumerable<Umbraco.Cms.Core.Models.Blocks.BlockListItem>>("contactBlock");
+
+}
+
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>@Model?.Name</title>
+
+    <!-- FONTS & ICONS -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="@Url.Content("~/css/style.css?v=2" + DateTime.Now.Ticks)" />
+    <link rel="stylesheet" href="@Url.Content("~/css/output.css?v=2" + DateTime.Now.Ticks)" />
+
+</head>
+
+<body>
+    <!-- 🟡 TOP BAR -->
+    <div class="top-bar">
+        <div class="container top-bar-inner">
+            <div class="address">
+                @Html.Raw(adressText)
+            </div>
+
+            <div class="social-links">
+                @if (!string.IsNullOrWhiteSpace(facebookUrl))
+                {
+                    <a href="@facebookUrl" target="_blank" aria-label="Facebook">
+                        <i class="fa-brands fa-facebook-f"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrWhiteSpace(twitterUrl))
+                {
+                    <a href="@twitterUrl" target="_blank" aria-label="Twitter">
+                        <i class="fa-brands fa-twitter"></i>
+                    </a>
+                }
+                @if (!string.IsNullOrWhiteSpace(linkedinUrl))
+                {
+                    <a href="@linkedinUrl" target="_blank" aria-label="LinkedIn">
+                        <i class="fa-brands fa-linkedin-in"></i>
+                    </a>
+                }
+            </div>
+        </div>
+    </div>
+
+    <!-- 🟢 HEADER -->
+    <header class="site-header">
+        <div class="container">
+            <div class="logo">
+                <a href="@root?.Url()">
+                    <img src="/images/logo.png" alt="Logo" />
+                </a>
+            </div>
+
+            <nav class="main-nav">
+                <ul>
+                    @if (menuItems != null)
+                    {
+                        foreach (var item in menuItems)
+                        {
+                            var isActive = item.Id == Umbraco.AssignedContentItem?.Id ? "active" : "";
+                            <li class="@isActive">
+                                <a href="@item.Url()">@item.Name</a>
+                            </li>
+                        }
+                    }
+                </ul>
+            
+            </nav>
+            <div>
+               @if (searchIcon != null)
+                {
+                    <img src="@searchIcon.Url()" alt="Search Icon" class="search-icon" />
+                }
+            </div>
+        </div>
+    </header>
+
+    <main>
+        @RenderBody()
+    </main>
+
+  
+    <!-- === PARTNER BLOCK === -->
+    @if (partnerBlocks != null && partnerBlocks.Any())
+    {
+        foreach (var block in partnerBlocks)
+        {
+            @await Html.PartialAsync($"BlockList/{block.Content.ContentType.Alias}", block)
+        }
+    }
+
+    <!-- === FOOTER === -->
+    <footer>
+        @if (footerBlocks != null)
+        {
+            foreach (var block in footerBlocks)
+            {
+                @await Html.PartialAsync($"BlockList/{block.Content.ContentType.Alias}", block)
+            }
+        }
+    </footer>
+</body>
+</html>

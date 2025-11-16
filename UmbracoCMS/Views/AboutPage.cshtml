@@ -1,0 +1,115 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<AboutPage>
+@{
+	Layout = "MainLayout.cshtml";
+	var ceoImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("ceoImage");
+	var ceoNameText = Model.Value<string>("ceoNameText");
+	var aboutTitle = Model.Value<string>("aboutTitle");
+	var ceoText = Model.Value<string>("ceoText");
+	var reviewTitle = Model.Value<string>("reviewTitle");
+	var reviewTitleTwo = Model.Value<string>("reviewTitleTwo");
+	var reviewText = Model.Value<string>("reviewText");
+	var reviewStarImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("ReviewStarImage");
+	var reviewerImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("ReviewerImage");
+	var reviewerName = Model.Value<string>("reviewerName");
+	var reviewerCompany = Model.Value<string>("reviewerCompany");
+	var expertTitle = Model.Value<string>("expertTitle");
+	var expertTitleTwo = Model.Value<string>("expertTitleTwo");
+
+
+
+
+
+}
+
+<partial name="Partials/_PageHeader" model="(IPageHeader)Model" />
+
+<section class="ceo-section">
+
+	<div class="about-us-container">
+		<h3>@Html.Raw(aboutTitle)</h3>
+	</div>
+	<div class="ceo-image">
+		 @if (ceoImage != null)
+                {
+                    <img src="@ceoImage.Url()" alt="CEO Image" class="ceo-image" />
+                }
+				<p>@Html.Raw(ceoNameText)</p>
+	</div>
+	<div class="about-text">
+		<p>@Html.Raw(ceoText)</p>
+	</div>
+</section>
+
+<section class="review-section">
+	<div class="review-info">
+		<p class="review-title">@Html.Raw(reviewTitle)</p>
+		<h3 class ="review-title-two">@Html.Raw(reviewTitleTwo)></h3>
+		<p class="review-text">@Html.Raw(reviewText)</p>
+		@if (reviewStarImage != null)
+		{
+			<img src="@reviewStarImage.Url()" alt="Star Image" class="review-star-image" />
+		}
+		<p class="reviewer-name">@Html.Raw(reviewerName)</p>
+		<p class="reviewer-company">@Html.Raw(reviewerCompany)</p>
+
+	</div>
+	<div>
+		@if (reviewerImage != null)
+		{
+			<img src="@reviewerImage.Url()" alt="Reviewer Image" class="reviewer-image" />
+		}
+	</div>
+
+</section>
+
+		<section class="expert-section">
+			<div class="expert-titles">
+	
+
+				<p class="expert-text">@Html.Raw(expertTitle)</p>
+				<h3>@Html.Raw(expertTitleTwo)</h3>
+		</div>
+		<div class="our-experts">
+		<div class="expert-card">
+			<img src="/images/Brandon.png" alt="Risk Management" />
+			<h4>Brandon Newton</h4>
+			<p>Financial Advisor at Onatrix</p>
+		</div>
+		<div class="expert-card">
+			<img src="/images/AJ.png" alt="Bonds & Commodities" />
+			<h4>AJ Carter</h4>
+			<p>Financial Advisor at Onatrix.</p>
+		</div>
+		<div class="expert-card">
+			<img src="/images/Aaron.png" alt="Assurance & Audits" />
+			<h4>Aaron Lambert</h4>
+			<p>Business Specialist at Onatrix.</p>
+		</div>
+		
+		</div>
+		<div class="our-expert-two">
+		<div class="expert-cards">
+			<img src="/images/Tina.png" alt="Risk Management" />
+			<h4>Tina Fox</h4>
+			<p>CEO & Founder at Onatrix</p>
+		</div>
+		<div class="expert-cards">
+			<img src="/images/Kerr.png" alt="Bonds & Commodities" />
+			<h4>Brandon Kerr</h4>
+			<p> CFO & Co-Founderat Onatrix</p>
+		</div>
+		<div class="expert-cards">
+			<img src="/images/Miranda.png" alt="Assurance & Audits" />
+			<h4>Miranda Dayton</h4>
+			<p>Head of HR at Onatrix</p>
+		</div>
+		<div class="expert-cards">
+			<img src="/images/Gardner.png" alt="Tax and Trusts" />
+			<h4>Kevin Gardner</h4>
+			<p>Banking Advisor at Swedbank</p>
+		</div>
+		</div>
+
+		</section>
+@Html.GetBlockListHtml(Model.ContactSection)

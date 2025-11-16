@@ -1,0 +1,47 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ServiceDetail>
+@{
+	Layout = "MainLayout.cshtml";
+
+}
+<partial name="Partials/_PageHeader" model="(IPageHeader)Model" />
+
+<section class="risk-section">
+
+	<div class="main-risk">
+		<div class="side-bar">
+			<aside>
+			@Html.GetBlockListHtml(Model.ServiceDetailAside)
+
+			</aside>
+			<div class="help-container">
+				<h3>How can we help you?</h3>
+				<p>online support 24/7, we are here to help you</p>
+
+				<form class="input-wrapper">
+					<button type="submit" class="mail-btn">
+						<i class="fa-solid fa-envelope"></i>
+					</button>
+					<input type="email" class="input-field" placeholder="Din e-postadress" required />
+				</form>
+			</div>
+		</div>
+
+
+
+
+
+
+
+		<div class="main-bar">
+			<div class="rte">@Html.Raw(Model.ServiceDetailBody)</div>
+		</div>
+	</div>
+
+	
+</section>
+
+@Html.GetBlockListHtml(Model.ContactSection)
+
+
+

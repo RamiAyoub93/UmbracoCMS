@@ -1,0 +1,53 @@
+@model DigitalWonderlab.MultiDomainEmail.Models.EmailTemplateModel
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset='utf-8'>
+    <title>Form Submission</title>
+</head>
+<body style='font-family: Arial, sans-serif; line-height: 1.6; color: #333; max-width: 600px; margin: 0 auto; padding: 20px;'>
+
+    <h2 style='color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px;'>
+        Form Submission: @Model.FormName
+    </h2>
+
+    <p style='color: #7f8c8d; margin-bottom: 30px;'>
+        <strong>Submitted:</strong> @Model.SubmissionDate
+    </p>
+
+    @if (!string.IsNullOrWhiteSpace(Model.CustomMessage))
+    {
+        <div style='background-color: #f8f9fa; padding: 20px; border-radius: 5px; margin-bottom: 30px;'>
+            @Html.Raw(Model.CustomMessage)
+        </div>
+    }
+
+    @if (Model.ShowAllFields && Model.Fields.Any())
+    {
+        <h3 style='color: #2c3e50; margin-bottom: 15px;'>Form Details:</h3>
+        <table style='width: 100%; border-collapse: collapse; background-color: white; box-shadow: 0 2px 5px rgba(0,0,0,0.1);'>
+            @foreach (var field in Model.Fields)
+            {
+                if (!string.IsNullOrWhiteSpace(field.Value))
+                {
+                    <tr>
+                        <td style='background-color: #f8f9fa; font-weight: bold; padding: 12px; border: 1px solid #dee2e6; width: 30%;'>
+                            @field.Name
+                        </td>
+                        <td style='padding: 12px; border: 1px solid #dee2e6;'>
+                            @field.Value
+                        </td>
+                    </tr>
+                }
+            }
+        </table>
+    }
+
+    <hr style='margin: 30px 0; border: none; border-top: 1px solid #eee;' />
+    <p style='color: #7f8c8d; font-size: 12px; text-align: center;'>
+        This email was automatically generated from your website contact form.
+    </p>
+
+</body>
+</html>

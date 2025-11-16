@@ -1,0 +1,1583 @@
+﻿@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300..700&family=Inter:wght@100..900&family=Nunito:wght@200..1000&family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+    --clr-neutral: #ffffff;
+    --clr-white: #F2EDDC;
+    --clr-white-100: #F7F7F7;
+    --clr-dark: #0E0E0E;
+    --clr-primary: #4F5955;
+    --clr-main-light: #606966;
+    --clr-accent: #F2EDDC;
+    --clr-secondary: #D9C3A9;
+    --clr-gray-400: #4B5264;
+    --clr-body-text: #535656;
+    --clr-body-text-100: #999999;
+    --clr-note1: #9C9EA6;
+    --clr-border-gray: #EAEAEA;
+    --clr-border-400: #C7C8C9;
+
+
+
+
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+
+/* ============ GLOBAL ============ */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    color: var(--clr-text);
+    background-color: #fff
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+
+.contact-block {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.contact-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    gap: 60px;
+    position: relative;
+}
+
+.contact-image {
+    position: relative;
+    flex: 1;
+}
+
+.contact-bg {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 20px;
+    display: block;
+}
+
+.contact-person {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 70%;
+    height: auto;
+}
+
+.contact-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.contact-title {
+    font-size: 32px;
+    font-weight: 700;
+    color: #3c4744;
+    line-height: 1.3;
+}
+
+.contact-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+}
+
+.contact-icon {
+    width: 22px;
+    height: 22px;
+    flex-shrink: 0;
+    margin-top: 4px;
+}
+
+.contact-text strong {
+    display: block;
+    color: #3c4744;
+    font-weight: 600;
+}
+
+.contact-text p {
+    margin: 2px 0 0;
+    color: #6a7370;
+    font-size: 15px;
+}
+
+/* ======== TOP BAR ======== */
+.top-bar {
+    background-color: #4F5955;
+    color: #fff;
+    font-size: 0.9rem;
+    padding: 10px 0;
+}
+
+.top-bar-inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.top-bar .address {
+    color: #fff;
+    font-weight: 500;
+}
+
+.social-links {
+    display: flex;
+    gap: 15px;
+}
+
+    .social-links a {
+        color: #fff;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+    }
+
+        .social-links a:hover {
+            color: #f5b921;
+        }
+
+/* ======== HEADER ======== */
+/* Bas: vit bakgrund, lätt skugga */
+.main-header {
+    background: #ffffff;
+    border-bottom: 1px solid #eee;
+    box-shadow: 0 1px 6px rgba(0,0,0,0.04);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+.site-header {
+    background: #fff;
+    border-bottom: 1px solid #eee;
+    padding: 10px 0;
+}
+
+    .site-header .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .site-header .logo img {
+        height: 50px;
+        width: auto;
+    }
+
+.main-nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+    .main-nav ul li a {
+        text-decoration: none;
+        color: #4F5955;
+        font-weight: 700;
+        transition: color 0.2s ease;
+    }
+
+        .main-nav ul li a:hover,
+        .main-nav ul li.active a {
+            color: #D9C3A9;
+        }
+
+
+/* ======== HERO (vänster text / höger bild som i din bild) ======== */
+.hero {
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 60vh; /* eller 600px om du vill ha fast höjd */
+    display: flex;
+    align-items: center;
+    justify-content: flex-start; /* texten till vänster */
+}
+
+.hero-overlay {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+}
+    /* textkolumnen (vänster) */
+    .hero .hero-text {
+        flex: 0 0 55%;
+        max-width: 55%;
+        padding-left: 100px;
+    }
+
+        .hero .hero-text h1 {
+            color: #333;
+            font-size: 46px;
+            line-height: 1.02;
+            margin-bottom: 16px;
+            font-weight: 700;
+        }
+
+        .hero .hero-text p {
+            color: #666;
+            margin-bottom: 22px;
+            font-size: 15px;
+            max-width: 520px;
+        }
+
+    /* CTA-knapp */
+    .hero .btn {
+        display: inline-block;
+        background: #4F5955;
+        color: #fff;
+        padding: 10px 20px;
+        border-radius: 4px;
+        font-weight: 600;
+        text-decoration: none;
+    }
+
+        .hero .btn:hover {
+            background: #3f4744;
+        }
+
+    /* bildkolumnen (höger) */
+    .hero .hero-image {
+        flex: 0 0 40%;
+        max-width: 40%;
+        text-align: right;
+    }
+
+        .hero .hero-image img {
+            width: 100%;
+            height: auto;
+            border-radius: 6px;
+            object-fit: cover;
+        }
+
+/* ======== RESPONSIVE ======== */
+@media (max-width: 992px) {
+    .hero .hero-inner {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+
+    .hero .hero-text,
+    .hero .hero-image {
+        max-width: 100%;
+        flex: 0 0 100%;
+    }
+
+    .hero .hero-image {
+        text-align: center;
+    }
+
+    .header-inner nav ul {
+        gap: 16px;
+    }
+}
+
+
+.about-section {
+    padding: 60px 20px;
+    background-color: #f9f9f9;
+    font-family: Arial, sans-serif;
+}
+
+.about-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px;
+    padding: 10px;
+    margin: 10px;
+    
+}
+
+.left-column {
+    flex: 1 1 50%;
+    max-width: 50%;
+}
+
+.right-column {
+    flex: 1 1 45%;
+    max-width: 45%;
+}
+
+.left-column h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    color: #333;
+}
+
+.text-block {
+    margin-top: 20px;
+    font-size: 1rem;
+    color: #555;
+    line-height: 1.6;
+}
+
+.quote {
+    margin: 30px 0;
+    font-style: italic;
+    font-size: 1.2rem;
+    color: #777;
+    border-left: 4px solid #ccc;
+    padding-left: 15px;
+}
+
+.signature {
+    display: table-row;
+    align-items: center;
+    margin-top: 40px;
+}
+
+.signature-image {
+    max-width: 150px;
+    margin-right: 15px;
+}
+
+.signature-text {
+    font-size: 1rem;
+    color: #333;
+}
+
+/* Form Container */
+.right-column {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 50px 20px;
+}
+
+.form-container {
+    width: 470px;
+    background: #fff;
+    box-shadow: 0px 0px 30px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    box-sizing: border-box;
+}
+
+    /* Title */
+    .form-container .form-title {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 45px;
+        color: #fff;
+        margin-bottom: 20px;
+        background-color: var(--clr-primary);
+        padding: 40px;
+    }
+
+    /* Subtitle / Description */
+    .form-container .form-subtitle {
+        font-family: 'Poppins', sans-serif;
+        font-style: italic;
+        font-weight: 400;
+        font-size: 13px;
+        line-height: 20px;
+        color: #535656;
+        margin-bottom: 30px;
+    }
+
+    /* Form fields – mjukare stil */
+    .form-container input,
+    .form-container select,
+    .form-container textarea {
+        width: 100%;
+        padding: 10px 10px; /* lite mer padding för luftig känsla */
+        margin-bottom: 20px;
+        border: 1px solid #E0E0E0; /* ljusare, mjukare kant */
+        border-radius: 12px; /* rundare hörn */
+        font-family: 'Poppins', sans-serif;
+        font-size: 14px;
+        line-height: 22px;
+        color: #535656;
+        background-color: #FAFAFA; /* mjuk ljus bakgrund */
+        box-sizing: border-box;
+        transition: all 0.3s ease; /* mjuk övergång vid hover/focus */
+    }
+
+        .form-container input:focus,
+        .form-container select:focus,
+        .form-container textarea:focus {
+            border-color: #CFCFCF; /* lite mörkare vid fokus */
+            background-color: #FFFFFF;
+            outline: none;
+        }
+
+
+        /* Placeholder color */
+        .form-container input::placeholder,
+        .form-container textarea::placeholder {
+            color: #9C9EA6;
+            font-style: italic;
+        }
+
+    /* Dropdown arrow (Font Awesome) */
+    .form-container .select-icon {
+        position: absolute;
+        right: 15px;
+        top: 50%;
+        transform: translateY(-50%);
+        color: #999999;
+        pointer-events: none;
+    }
+
+    /* Button */
+    .form-container button {
+        width: 100%;
+        padding: 15px;
+        background: #F2EDDC;
+        border: none;
+        border-radius: 5px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 24px;
+        color: #4F5955;
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+
+        .form-container button:hover {
+            background: #e0d9b8;
+        }
+
+.form-group-contact.two-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px 30px; /* row-gap, column-gap */
+}
+
+/* ======================================= */
+/* === CSS FÖR SERVICE-SEKTIONEN === */
+/* ======================================= */
+
+.service-section {
+    padding: 5rem 0;
+    background-color: #f8f9fa;
+}
+
+.service-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* HEADER */
+.service-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.service-label {
+    font-size: 0.875rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    color: #c6a35a; /* mjuk guldig ton som i exemplet */
+    margin-bottom: 0.5rem;
+    letter-spacing: 1px;
+}
+
+.service-header .rte h2 {
+    font-size: 2.25rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    line-height: 1.4;
+    margin: 0;
+}
+
+/* GRID */
+.service-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(330px, 1fr));
+    gap: 1.5rem;
+}
+
+/* KORT */
+.service-card {
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    transition: all 0.3s ease;
+    text-align: left;
+    text-decoration: none;
+}
+
+    .service-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+        text-decoration: none;
+    }
+
+    .service-card img {
+        width: 100%;
+        height: 220px;
+        object-fit: cover;
+    }
+
+    .service-card h4 {
+        font-size: 1.125rem;
+        font-weight: 600;
+        color: #212529;
+        margin: 1rem 1rem 0.5rem 1rem;
+    }
+
+    .service-card p {
+        font-size: 0.9375rem;
+        color: #6c757d;
+        line-height: 1.6;
+        margin: 0 1rem 1.25rem 1rem;
+    }
+
+/* === Risk Management Section === */
+.risk-section {
+    padding: 60px 0;
+    background-color: #f9f9f9;
+    font-family: "Poppins", sans-serif;
+}
+
+    .risk-section .risk-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+        color: #222;
+    }
+
+.main-risk {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* === SIDEBAR === */
+.side-bar {
+    flex: 1;
+    max-width: 300px;
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+    .side-bar .about-title {
+        font-size: 1.3rem;
+        margin-bottom: 10px;
+        color: #222;
+    }
+
+    .side-bar .side-image {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 15px;
+    }
+
+    .side-bar p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 25px;
+    }
+
+/* === HELP BOX === */
+.help-container {
+    background-color: #4F5955;
+    border-radius: 12px;
+    padding: 20px;
+    text-align: center;
+}
+
+    .help-container h3 {
+        font-size: 1.2rem;
+        color: #F2EDDC;
+        margin-bottom: 10px;
+    }
+
+    .help-container p {
+        color: #F2EDDC;
+        font-size: 0.95rem;
+        margin-bottom: 15px;
+    }
+
+    .help-container .input-field {
+        width: 100%;
+        padding: 10px 12px;
+        border-radius: 6px;
+        border: 1px solid #ccc;
+        font-size: 0.95rem;
+    }
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px 40px 10px 10px; /* utrymme till höger för ikonen */
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 14px;
+}
+
+.mail-btn {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background: none;
+    border: none;
+    color: #555;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 0;
+}
+
+    .mail-btn:hover {
+        color: #000; /* färg vid hover */
+    }
+
+
+
+
+
+/* === MAIN CONTENT === */
+.main-bar {
+    flex: 2;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+    .main-bar img {
+        width: 100%;
+        border-radius: 10px;
+        margin-bottom: 25px;
+    }
+
+    .main-bar h3 {
+        font-size: 1.5rem;
+        color: #333;
+        margin-bottom: 15px;
+    }
+
+    .main-bar p {
+        color: #555;
+        line-height: 1.7;
+        margin-bottom: 30px;
+    }
+
+/* === QUESTION FORM === */
+.question-form {
+    margin-top: 60px;
+    text-align: center;
+}
+
+    .question-form form {
+        display: inline-block;
+        background-color: #fff;
+        padding: 30px;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    }
+
+/* === RESPONSIVE === */
+@media (max-width: 900px) {
+    .main-risk {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .side-bar,
+    .main-bar {
+        max-width: 100%;
+    }
+}
+
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .service-header .rte h2 {
+        font-size: 1.75rem;
+    }
+
+    .service-card h4 {
+        font-size: 1rem;
+    }
+}
+
+
+/* * RESPONSIVITET (Viktigt!)
+ * Få korten att staplas på mindre skärmar
+ */
+
+@media (max-width: 992px) {
+    .service-grid {
+        /* Byt till 2 kolumner för tablets */
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .service-grid {
+        /* Byt till 1 kolumn för mobiler */
+        grid-template-columns: 1fr;
+    }
+
+    .service-header .rte h2 {
+        font-size: 2rem; /* Lite mindre rubrik på mobilen */
+    }
+}
+/* Responsiv design */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-column,
+    .right-column {
+        max-width: 100%;
+    }
+}
+
+
+.trust-section {
+    background-color: #ffffff;
+    padding: 6rem 0 3rem 0;
+    text-align: center;
+    position: relative;
+}
+
+.trust-container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+/* Textdel */
+.trust-title-one {
+    font-family: 'Poppins', sans-serif;
+    font-size: 1.125rem;
+    font-weight: 600;
+    color: #4F5955;
+    margin-bottom: 0.5rem;
+}
+
+.trust-title-two {
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    font-weight: 700;
+    color: #2c2c2c;
+    margin-bottom: 1rem;
+}
+
+    .trust-title-two span {
+        color: #c6a35a; /* Guldig ton för siffror */
+    }
+
+.trust-text {
+    font-family: 'Poppins', sans-serif;
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #6c757d;
+    max-width: 600px;
+    margin: 0 auto 2rem auto;
+}
+
+/* Knapp */
+.trust-button {
+    display: inline-block;
+    background-color: #4F5955;
+    color: #ffffff;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 0.95rem;
+    text-decoration: none;
+    padding: 12px 30px;
+    border-radius: 6px;
+    transition: background 0.3s ease;
+}
+
+    .trust-button:hover {
+        background-color: #3f4b47;
+    }
+
+/* Bilden längst ned */
+.trust-image {
+    margin-top: 3rem;
+}
+
+    .trust-image img {
+        width: 100%;
+        max-width: 900px;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+    }
+
+/* Responsivitet */
+@media (max-width: 768px) {
+    .trust-title-two {
+        font-size: 1.5rem;
+    }
+
+    .trust-text {
+        font-size: 0.9rem;
+    }
+}
+/* ===== SUCCESS SECTION - korrigerad ===== */
+.success-section {
+    background-color: #ffffff; /* sektionens vita bas */
+    padding: 0;
+}
+
+/* Header ovanför det mörka blocket */
+.success-header {
+    text-align: center;
+    padding: 60px 0 20px 0; /* luft ovanför mörk block */
+}
+
+.success-title-one {
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    color: #EACDA2; /* svag beige för lilla rubriken */
+    letter-spacing: 1px;
+    font-weight: 600;
+    margin-bottom: 8px;
+}
+
+.success-title-two {
+    font-size: 2.2rem;
+    color: #ffffff; /* vit text på mörk bakgrund ovanför mörka blocket */
+    font-weight: 700;
+    margin: 0;
+    position: relative;
+    top: 8px;
+}
+
+/* Mörkt block som innehåller kartan och statistiken */
+.success-bg {
+    position: relative;
+    background-color: #4F5955; /* mörka blocket */
+    padding: 80px 0 320px 0; /* mycket bottom-padding så bilden kan överlappa */
+    overflow: visible; /* låt bilden sticka ut */
+}
+
+    /* World map (centrerad, låg opacitet) */
+    .success-bg .world-map {
+        position: absolute;
+        left: 50%;
+        top: 18px;
+        transform: translateX(-50%);
+        width: 100%; /* justera storlek på kartan */
+        height: 80%; /* höjd som passar under rubriken */
+        background-position: center;
+        background-size: contain;
+        background-repeat: no-repeat;
+       
+        z-index: 1;
+    }
+
+/* Innehållet (stats) ovanpå kartan */
+.success-overlay-content {
+    position: relative;
+    z-index: 2;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding-top: 10px;
+}
+
+/* Tre statistikkolumner centrerade */
+.success-stats {
+    display: flex;
+    justify-content: center; /* centrera hela raden */
+    gap: 90px; /* mellanrum mellan poster */
+    align-items: center;
+    flex-wrap: nowrap;
+}
+
+/* Individuell statistik */
+.success-item {
+    flex: 0 1 260px; /* fast min-bredd, undvik att krympa för mycket */
+    text-align: center;
+}
+
+.success-number {
+    font-size: 72px; /* stor siffra */
+    font-weight: 700;
+    color: #EACDA2; /* beige färg */
+    margin: 0 0 8px 0;
+    line-height: 1;
+}
+
+.success-sub {
+    font-size: 14px;
+    color: rgba(255,255,255,0.95); /* vit text (lätt mjukare) */
+    max-width: 260px;
+    margin: 0 auto;
+    line-height: 1.4;
+}
+
+/* --------- Gruppbild som överlappar nedre delen av mörka blocket --------- */
+.success-group {
+    position: relative;
+    z-index: 3;
+    margin-top: -80px; /* flytta upp så den hänger över mörka blocket */
+    display: flex;
+    justify-content: center;
+    padding-bottom: 60px; /* utrymme under bilden */
+}
+
+    .success-group .group-image {
+        width: 72%; /* bildens relativa bredd */
+        max-width: 920px;
+        height: auto;
+        display: block;
+        border-radius: 4px;
+        box-shadow: 0 30px 50px rgba(0,0,0,0.25); /* tydlig skugga lik referens */
+        background: transparent;
+        object-fit: cover;
+
+    }
+
+
+
+
+/* === PROJECT SECTION === */
+.project-section {
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Rubrikdel */
+.project-header {
+    margin-bottom: 50px;
+}
+
+    .project-header h3 {
+        font-size: 0.875rem;
+        text-transform: uppercase;
+        color: #e67e22; /* Accentfärg — byt om du vill */
+        letter-spacing: 1px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
+
+    .project-header h2 {
+        font-size: 2.5rem;
+        font-weight: 700;
+        color: #212529;
+        margin: 0;
+    }
+
+/* Bildgalleriet */
+.project-images {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    max-width: 1900px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+
+    .project-images img {
+        width: 100%;
+        height: 460px;
+        object-fit: cover;
+        box-shadow: 0 8px 20px rgba(0,0,0,0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+        .project-images img:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.12);
+        }
+
+/* === PARTNER SECTION === */
+.partner-section {
+    width: 100%;
+    background-color: #ffffff;
+    display: flex;
+    justify-content: center;
+    padding: 40px 0;
+}
+
+    .partner-section > div {
+        width: 1155px;
+        height: 65px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        gap: 25px;
+    }
+
+.partner-image {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .partner-image img {
+        height: 65px;
+        width: auto;
+        object-fit: contain;
+        opacity: 0.8;
+        transition: opacity 0.3s ease, transform 0.3s ease;
+        filter: grayscale(100%);
+    }
+
+        .partner-image img:hover {
+            opacity: 1;
+            filter: grayscale(0%);
+            transform: scale(1.05);
+        }
+
+/* Responsiv justering */
+@media (max-width: 1200px) {
+    .partner-section > div {
+        width: 90%;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    .partner-section > div {
+        flex-wrap: wrap;
+        height: auto;
+        justify-content: center;
+    }
+
+    .partner-image img {
+        height: 50px;
+        margin: 10px;
+    }
+}
+.footer-block {
+    background-color: #000; /* Svart bakgrund */
+    color: #fff;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+    .footer-block .footer-container {
+        max-width: 1140px;
+        margin: 0 auto;
+    }
+
+    .footer-block p {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 400;
+        line-height: 1.6;
+        margin: 0;
+        color: #e0e0e0; /* Lite mjukare vit ton */
+    }
+
+    .footer-block span {
+        white-space: pre-wrap; /* Bevarar radbrytningar */
+    }
+/* === CEO SECTION === */
+.ceo-section {
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    max-width: 1155px;
+    margin: 4rem auto;
+    gap: 2rem;
+    flex-wrap: wrap;
+}
+
+.about-us-container {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+    .about-us-container h3 {
+        font-size: 2rem;
+        font-weight: 600;
+    }
+
+.ceo-image {
+    flex: 1 1 300px;
+    text-align: center;
+}
+
+    .ceo-image img {
+        width: 100%;
+        max-width: 320px;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .ceo-image p {
+        margin-top: 1rem;
+        font-weight: 500;
+    }
+
+.about-text {
+    flex: 1 1 400px;
+}
+
+    .about-text p {
+        line-height: 1.7;
+        font-size: 1rem;
+    }
+
+
+/* === REVIEW SECTION === */
+.review-section {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1155px;
+    margin: 4rem auto;
+    gap: 3rem;
+    flex-wrap: wrap;
+}
+
+.review-info {
+    flex: 1 1 500px;
+}
+
+    .review-info p,
+    .review-info h3 {
+        margin-bottom: 0.75rem;
+    }
+
+.review-title {
+    font-size: 1.2rem;
+    color: var(--clr-secondary: #D9C3A9);
+}
+
+.review-title-two {
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.review-text {
+    line-height: 1.7;
+    margin-bottom: 1rem;
+}
+
+.reviewer-image {
+    width: 100%;
+    max-width: 550px;
+    height: auto;
+}
+.review-star-image {
+    width: 100%;
+    max-width: 150px;
+    height: auto;
+    border-radius: 10px;
+}
+
+
+/* === EXPERT SECTION === */
+.expert-section {
+    max-width: 1155px;
+    margin: 5rem auto;
+    text-align: center;
+}
+
+.expert-titles {
+    margin-bottom: 3rem;
+}
+
+    .expert-titles p {
+        font-size: 1.2rem;
+        color: #777;
+    }
+
+    .expert-titles h3 {
+        font-size: 2.2rem;
+        font-weight: 600;
+    }
+
+/* --- Our Experts (3 in a row) --- */
+.our-experts {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin-bottom: 3rem;
+}
+
+.expert-card {
+    text-align: center;
+    width: 280px;
+}
+
+    .expert-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .expert-card h4 {
+        margin-top: 1rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+    }
+
+    .expert-card p {
+        font-size: 0.95rem;
+        color: #777;
+    }
+
+/* --- Our Experts Two (4 in a row) --- */
+.our-expert-two {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.expert-cards {
+    text-align: center;
+    width: 240px;
+}
+
+    .expert-cards img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+    }
+
+    .expert-cards h4 {
+        margin-top: 0.75rem;
+        font-size: 1rem;
+        font-weight: 600;
+    }
+
+    .expert-cards p {
+        font-size: 0.9rem;
+        color: #777;
+    }
+
+/* === MAP SECTION STYLING === */
+.map-section {
+    position: relative;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    min-height: 600px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 100px 20px;
+}
+
+.map-overlay {
+    background-color: rgba(255, 255, 255, 0.95);
+    padding: 60px 80px;
+    border-radius: 12px;
+    max-width: 1200px;
+    width: 100%;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+    text-align: center;
+}
+
+.map-content .small-title {
+    color: #c9a57a;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.9rem;
+}
+
+.map-content h2 {
+    font-size: 2.3rem;
+    color: #3d4a46;
+    font-weight: 700;
+    margin: 10px 0 15px;
+}
+
+.map-content p {
+    color: #666;
+    font-size: 1rem;
+    margin-bottom: 40px;
+}
+
+/* === UMBRACO FORM STYLING === */
+.map-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.map-form .umbraco-forms-fieldset {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+}
+
+.map-form .umbraco-forms-field {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+}
+
+.map-form input,
+.map-form select,
+.map-form textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    color: #333;
+    background-color: #fff;
+}
+
+.map-form textarea {
+    min-height: 100px;
+}
+
+.map-form button,
+.map-form input[type="submit"] {
+    background-color: #3d4a46;
+    color: #fff;
+    border: none;
+    padding: 12px 40px;
+    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin: 20px auto 0;
+    display: block;
+}
+
+    .map-form button:hover,
+    .map-form input[type="submit"]:hover {
+        background-color: #2e3835;
+    }
+/* ===== PROJECT SECTION CONTAINER ===== */
+.projects-section {
+    padding: 80px 0;
+    background-color: #fff;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ===== PROJECT LIST ===== */
+.projects-list {
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.project-item {
+    display: flex;
+    gap: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 20px;
+}
+
+    .project-item a {
+        display: flex;
+        gap: 20px;
+        text-decoration: none;
+        color: inherit;
+    }
+
+  
+
+.project-image img {
+    width: 370px;
+    height: 200px;
+    object-fit: cover;
+    border: 1px solid #ddd;
+}
+
+.project-content {
+    flex: 1;
+}
+
+    .project-content h3 {
+        font-size: 1.1rem;
+        font-weight: 600;
+        margin: 0 0 8px 0;
+    }
+
+.project-date {
+    font-size: 0.85rem;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.project-excerpt {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 10px;
+}
+
+.read-more {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: #a77f43;
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+/* Container för projektposter */
+.projects-container-side {
+    margin-bottom: 30px;
+}
+
+.projects-list-side {
+    display: flex;
+    flex-direction: column;
+    gap: 15px; /* mellanrum mellan poster */
+}
+
+/* Enskild projektpost */
+.project-item-side {
+    display: flex;
+    gap: 10px;
+    background-color: #fff;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+    .project-item-side:hover {
+        transform: scale(1.02);
+    }
+
+.project-image-side img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.project-content-side h3 {
+    font-size: 14px;
+    margin: 0 0 4px 0;
+}
+
+.project-date-side {
+    font-size: 12px;
+    color: #888;
+    margin: 0;
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+/* ===== TAGS ===== */
+.tags-section h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tags-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.tag {
+    font-size: 0.85rem;
+    border: 1px solid #ccc;
+    padding: 6px 10px;
+    border-radius: 6px;
+    background-color: #f8f8f8;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+    .tag:hover {
+        background-color: #4F59E5;
+        color: #fff;
+        border-color: #4F59E5;
+    }
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 992px) {
+    .projects-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        order: -1;
+    }
+
+    .project-item {
+        flex-direction: column;
+    }
+
+    .project-image img {
+        width: 100%;
+        height: auto;
+    }
+}
+.page-header {
+    background-image: url('/images/pageheaderimage.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    padding: 80px 0;
+    position: relative;
+    color: #000; /* ändra om du vill ha vitt */
+}
+
+.page-header-container h1 {
+    margin: 0;
+    font-size: 48px;
+}
+
+
+.breadheader {
+    display: flex;
+    justify-content: center;
+    gap: 3px;
+    padding-top: 3px;
+}
+
+.breadcrumb {
+    display: flex;
+    justify-content: center;
+    gap: 2px;
+
+}
+.bread-links {
+    font-size: 16px;
+    text-decoration: none;
+    color: #D9C3A9
+}
+
+.breadcrumb a {
+    text-decoration: none;
+}

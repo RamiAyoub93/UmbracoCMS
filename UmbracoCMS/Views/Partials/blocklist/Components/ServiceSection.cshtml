@@ -1,0 +1,53 @@
+﻿@using ContentModels = Umbraco.Cms.Web.Common.PublishedModels
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<Umbraco.Cms.Core.Models.Blocks.BlockListItem>
+
+@{
+	var content = (ContentModels.ServiceSection)Model.Content;
+	var settings = Model.Settings as ContentModels.ServiceSettings;
+
+	var sectionColor = settings?.ServiceBgColor;
+
+	var current = Umbraco.AssignedContentItem;
+	var siteRoot = current?.Root();
+	var servicePage = siteRoot?.Children<ServicePage>()?.FirstOrDefault();
+	var items = servicePage?.Children<ServiceDetail>()?.OrderByDescending(x => x.CreateDate).ToList() ?? [];
+}
+<section class="service-section">
+    <div class="service-container">
+        <div class="service-header">
+            @if(settings!.ShowServiceLabel)
+            {
+                
+            <h5 class="rte">@content.ServiceLabel</h5>
+            }
+            <div class="rte">
+                <h3 class="rte">@content.ServiceTitle</h3>
+
+            </div>
+           
+
+        </div>
+
+        <div class="service-grid">
+                @if(items.Any())
+                {
+                    foreach(var item in items)
+                {
+                    <div class="service-card">
+                        <a href="@item.Url()" class="service-card">
+                            <h4>@item.Name</h4>
+                            <img src="@item.ServiceDetailThumbnail?.Url()" alt="Risk Management" />
+                            <p>
+                               @item.ServiceDetailExcerpt
+                            </p>
+                        </a>
+                    </div>
+                }
+            }
+                else
+                {
+                    <p>No Services Available</p>    
+                }
+        </div>
+    </div>
+    </section>

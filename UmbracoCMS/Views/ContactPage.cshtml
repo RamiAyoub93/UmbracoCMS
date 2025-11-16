@@ -1,0 +1,32 @@
+﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+@inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContactPage>
+@using UmbracoCms.ViewModels
+
+@{
+	Layout = "MainLayout.cshtml";
+    var title = Model.Value<string>("mapTitle");
+    var titleTwo = Model.Value<string>("mapTitleTwo");
+    var text = Model.Value<string>("mapText");
+    var form = Model.Value("mapForm");
+    var bgImage = Model.Value<Umbraco.Cms.Core.Models.MediaWithCrops>("mapImage");
+    var bgUrl = bgImage != null ? bgImage.Url() : "";
+
+}
+
+<partial name="Partials/_PageHeader" model="(IPageHeader)Model" />
+@Html.GetBlockListHtml(Model.ContactSection)
+
+
+    <section class="map-section" style="background-image: url('@bgUrl');">
+        <div class="map-overlay">
+            <div class="map-content">
+                <span class="small-title">@Html.Raw(title)</span>
+                <h2>@Html.Raw(titleTwo)</h2>
+                <p>@Html.Raw(text)</p>
+
+            </div>
+                <div class="map-form">
+                <partial name="Partials/Forms/_ContactForm" model="new CallBackFormViewModel()" />
+            </div>
+        </div>
+    </section>
