@@ -65,34 +65,33 @@ body {
 
 .rte h3 {
     font-size: 2.5rem;
-    color: var(--color-primary); /* ersätt med t.ex. #007bff */
+    color: var(--color-primary); /
     font-weight: bold;
 }
 
 .current a {
-    color: var(--color-secondary); /* ersätt med t.ex. #ff6600 */
+    color: var(--color-secondary); 
 }
 
 .rte ul {
     list-style-type: disc;
-    padding-left: 1.25rem; /* motsvarar pl-5 */
-    margin-top: 0.75rem; /* motsvarar mt-3 */
+    padding-left: 1.25rem;
+    margin-top: 0.75rem; 
 }
 
     .rte ul li {
-        font-size: 0.875rem; /* motsvarar text-xs */
-        color: var(--color-body-text); /* lägg till din textfärg */
-        margin-bottom: 0.75rem; /* motsvarar mb-3 */
+        font-size: 0.875rem; 
+        color: var(--color-body-text); 
+        margin-bottom: 0.75rem;
     }
 
         .rte ul li::marker {
-            color: var(--color-secondary); /* samma som text-secondary */
+            color: var(--color-secondary); 
         }
 
 img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    display: block; /* tar bort tomt mellanrum under bilden */
-}
+    display: block; 
 

@@ -154,7 +154,7 @@ body {
         }
 
 /* ======== HEADER ======== */
-/* Bas: vit bakgrund, lätt skugga */
+
 .main-header {
     background: #ffffff;
     border-bottom: 1px solid #eee;
@@ -201,15 +201,15 @@ body {
         }
 
 
-/* ======== HERO (vänster text / höger bild som i din bild) ======== */
+/* ======== HERO======== */
 .hero {
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
-    min-height: 60vh; /* eller 600px om du vill ha fast höjd */
+    min-height: 60vh; 
     display: flex;
     align-items: center;
-    justify-content: flex-start; /* texten till vänster */
+    justify-content: flex-start; 
 }
 
 .hero-overlay {
@@ -218,7 +218,7 @@ body {
     display: flex;
     align-items: center;
 }
-    /* textkolumnen (vänster) */
+    
     .hero .hero-text {
         flex: 0 0 55%;
         max-width: 55%;
@@ -240,7 +240,7 @@ body {
             max-width: 520px;
         }
 
-    /* CTA-knapp */
+  
     .hero .btn {
         display: inline-block;
         background: #4F5955;
@@ -255,7 +255,7 @@ body {
             background: #3f4744;
         }
 
-    /* bildkolumnen (höger) */
+   
     .hero .hero-image {
         flex: 0 0 40%;
         max-width: 40%;
@@ -394,41 +394,41 @@ body {
         margin-bottom: 30px;
     }
 
-    /* Form fields – mjukare stil */
+    /* Form fields */
     .form-container input,
     .form-container select,
     .form-container textarea {
         width: 100%;
-        padding: 10px 10px; /* lite mer padding för luftig känsla */
+        padding: 10px 10px; 
         margin-bottom: 20px;
-        border: 1px solid #E0E0E0; /* ljusare, mjukare kant */
-        border-radius: 12px; /* rundare hörn */
+        border: 1px solid #E0E0E0; 
+        border-radius: 12px; /
         font-family: 'Poppins', sans-serif;
         font-size: 14px;
         line-height: 22px;
         color: #535656;
-        background-color: #FAFAFA; /* mjuk ljus bakgrund */
+        background-color: #FAFAFA; 
         box-sizing: border-box;
-        transition: all 0.3s ease; /* mjuk övergång vid hover/focus */
+        transition: all 0.3s ease;
     }
 
         .form-container input:focus,
         .form-container select:focus,
         .form-container textarea:focus {
-            border-color: #CFCFCF; /* lite mörkare vid fokus */
+            border-color: #CFCFCF;
             background-color: #FFFFFF;
             outline: none;
         }
 
 
-        /* Placeholder color */
+       
         .form-container input::placeholder,
         .form-container textarea::placeholder {
             color: #9C9EA6;
             font-style: italic;
         }
 
-    /* Dropdown arrow (Font Awesome) */
+    
     .form-container .select-icon {
         position: absolute;
         right: 15px;
@@ -438,7 +438,7 @@ body {
         pointer-events: none;
     }
 
-    /* Button */
+    
     .form-container button {
         width: 100%;
         padding: 15px;
@@ -461,7 +461,7 @@ body {
 .form-group-contact.two-column {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 20px 30px; /* row-gap, column-gap */
+    gap: 20px 30px; 
 }
 
 /* ======================================= */
@@ -489,7 +489,7 @@ body {
     font-size: 0.875rem;
     font-weight: 600;
     text-transform: uppercase;
-    color: #c6a35a; /* mjuk guldig ton som i exemplet */
+    color: #c6a35a; 
     margin-bottom: 0.5rem;
     letter-spacing: 1px;
 }
@@ -632,7 +632,7 @@ body {
 
 .input-field {
     width: 100%;
-    padding: 10px 40px 10px 10px; /* utrymme till höger för ikonen */
+    padding: 10px 40px 10px 10px; 
     border: 1px solid #ccc;
     border-radius: 6px;
     font-size: 14px;
@@ -652,7 +652,7 @@ body {
 }
 
     .mail-btn:hover {
-        color: #000; /* färg vid hover */
+        color: #000; 
     }
 
 
@@ -726,25 +726,23 @@ body {
 }
 
 
-/* * RESPONSIVITET (Viktigt!)
- * Få korten att staplas på mindre skärmar
- */
+/* * RESPONSIVITET */
 
 @media (max-width: 992px) {
     .service-grid {
-        /* Byt till 2 kolumner för tablets */
+        
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media (max-width: 768px) {
     .service-grid {
-        /* Byt till 1 kolumn för mobiler */
+      
         grid-template-columns: 1fr;
     }
 
     .service-header .rte h2 {
-        font-size: 2rem; /* Lite mindre rubrik på mobilen */
+        font-size: 2rem; 
     }
 }
 /* Responsiv design */
@@ -790,7 +788,7 @@ body {
 }
 
     .trust-title-two span {
-        color: #c6a35a; /* Guldig ton för siffror */
+        color: #c6a35a; 
     }
 
 .trust-text {
@@ -820,7 +818,7 @@ body {
         background-color: #3f4b47;
     }
 
-/* Bilden längst ned */
+
 .trust-image {
     margin-top: 3rem;
 }
@@ -843,22 +841,21 @@ body {
         font-size: 0.9rem;
     }
 }
-/* ===== SUCCESS SECTION - korrigerad ===== */
+/* ===== SUCCESS SECTION ===== */
 .success-section {
-    background-color: #ffffff; /* sektionens vita bas */
+    background-color: #ffffff; 
     padding: 0;
 }
 
-/* Header ovanför det mörka blocket */
 .success-header {
     text-align: center;
-    padding: 60px 0 20px 0; /* luft ovanför mörk block */
+    padding: 60px 0 20px 0; 
 }
 
 .success-title-one {
     font-size: 0.85rem;
     text-transform: uppercase;
-    color: #EACDA2; /* svag beige för lilla rubriken */
+    color: #EACDA2; 
     letter-spacing: 1px;
     font-weight: 600;
     margin-bottom: 8px;
@@ -866,29 +863,28 @@ body {
 
 .success-title-two {
     font-size: 2.2rem;
-    color: #ffffff; /* vit text på mörk bakgrund ovanför mörka blocket */
+    color: #ffffff; 
     font-weight: 700;
     margin: 0;
     position: relative;
     top: 8px;
 }
 
-/* Mörkt block som innehåller kartan och statistiken */
 .success-bg {
     position: relative;
-    background-color: #4F5955; /* mörka blocket */
-    padding: 80px 0 320px 0; /* mycket bottom-padding så bilden kan överlappa */
-    overflow: visible; /* låt bilden sticka ut */
+    background-color: #4F5955; 
+    padding: 80px 0 320px 0; 
+    overflow: visible; 
 }
 
-    /* World map (centrerad, låg opacitet) */
+ 
     .success-bg .world-map {
         position: absolute;
         left: 50%;
         top: 18px;
         transform: translateX(-50%);
-        width: 100%; /* justera storlek på kartan */
-        height: 80%; /* höjd som passar under rubriken */
+        width: 100%; 
+        height: 80%; /
         background-position: center;
         background-size: contain;
         background-repeat: no-repeat;
@@ -896,7 +892,7 @@ body {
         z-index: 1;
     }
 
-/* Innehållet (stats) ovanpå kartan */
+
 .success-overlay-content {
     position: relative;
     z-index: 2;
@@ -905,54 +901,53 @@ body {
     padding-top: 10px;
 }
 
-/* Tre statistikkolumner centrerade */
 .success-stats {
     display: flex;
-    justify-content: center; /* centrera hela raden */
-    gap: 90px; /* mellanrum mellan poster */
+    justify-content: center; 
+    gap: 90px; 
     align-items: center;
     flex-wrap: nowrap;
 }
 
-/* Individuell statistik */
+
 .success-item {
-    flex: 0 1 260px; /* fast min-bredd, undvik att krympa för mycket */
+    flex: 0 1 260px; 
     text-align: center;
 }
 
 .success-number {
-    font-size: 72px; /* stor siffra */
+    font-size: 72px; 
     font-weight: 700;
-    color: #EACDA2; /* beige färg */
+    color: #EACDA2; 
     margin: 0 0 8px 0;
     line-height: 1;
 }
 
 .success-sub {
     font-size: 14px;
-    color: rgba(255,255,255,0.95); /* vit text (lätt mjukare) */
+    color: rgba(255,255,255,0.95); 
     max-width: 260px;
     margin: 0 auto;
     line-height: 1.4;
 }
 
-/* --------- Gruppbild som överlappar nedre delen av mörka blocket --------- */
+
 .success-group {
     position: relative;
     z-index: 3;
-    margin-top: -80px; /* flytta upp så den hänger över mörka blocket */
+    margin-top: -80px;
     display: flex;
     justify-content: center;
-    padding-bottom: 60px; /* utrymme under bilden */
+    padding-bottom: 60px; 
 }
 
     .success-group .group-image {
-        width: 72%; /* bildens relativa bredd */
+        width: 72%; 
         max-width: 920px;
         height: auto;
         display: block;
         border-radius: 4px;
-        box-shadow: 0 30px 50px rgba(0,0,0,0.25); /* tydlig skugga lik referens */
+        box-shadow: 0 30px 50px rgba(0,0,0,0.25);
         background: transparent;
         object-fit: cover;
 
@@ -976,7 +971,7 @@ body {
     .project-header h3 {
         font-size: 0.875rem;
         text-transform: uppercase;
-        color: #e67e22; /* Accentfärg — byt om du vill */
+        color: #e67e22;
         letter-spacing: 1px;
         font-weight: 600;
         margin-bottom: 10px;
@@ -1072,7 +1067,7 @@ body {
     }
 }
 .footer-block {
-    background-color: #000; /* Svart bakgrund */
+    background-color: #000; 
     color: #fff;
     padding: 2rem 1rem;
     text-align: center;
@@ -1089,11 +1084,11 @@ body {
         font-weight: 400;
         line-height: 1.6;
         margin: 0;
-        color: #e0e0e0; /* Lite mjukare vit ton */
+        color: #e0e0e0;
     }
 
     .footer-block span {
-        white-space: pre-wrap; /* Bevarar radbrytningar */
+        white-space: pre-wrap;
     }
 /* === CEO SECTION === */
 .ceo-section {
@@ -1213,7 +1208,7 @@ body {
         font-weight: 600;
     }
 
-/* --- Our Experts (3 in a row) --- */
+/* --- Our Experts --- */
 .our-experts {
     display: flex;
     justify-content: center;
@@ -1244,7 +1239,7 @@ body {
         color: #777;
     }
 
-/* --- Our Experts Two (4 in a row) --- */
+/* --- Our Experts Two --- */
 .our-expert-two {
     display: flex;
     justify-content: center;
@@ -1449,7 +1444,7 @@ body {
     flex-direction: column;
     gap: 30px;
 }
-/* Container för projektposter */
+
 .projects-container-side {
     margin-bottom: 30px;
 }
@@ -1457,10 +1452,10 @@ body {
 .projects-list-side {
     display: flex;
     flex-direction: column;
-    gap: 15px; /* mellanrum mellan poster */
+    gap: 15px; 
 }
 
-/* Enskild projektpost */
+
 .project-item-side {
     display: flex;
     gap: 10px;
@@ -1550,7 +1545,7 @@ body {
     background-repeat: no-repeat;
     padding: 80px 0;
     position: relative;
-    color: #000; /* ändra om du vill ha vitt */
+    color: #000; 
 }
 
 .page-header-container h1 {
